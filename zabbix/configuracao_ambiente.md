@@ -5,8 +5,8 @@ fonte: https://www.zabbix.com/br/download?zabbix=6.0&os_distribution=ubuntu&os_v
 ~~~
 ### Instale o repositório Zabbix e Instale o servidor, o frontend e o agente Zabbix
 ~~~sh
-wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-1+ubuntu20.04_all.deb \
-dpkg -i zabbix-release_6.0-1+ubuntu20.04_all.deb \
+wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-1+ubuntu20.04_all.deb ; \
+dpkg -i zabbix-release_6.0-1+ubuntu20.04_all.deb ; \
 apt update -y
 ~~~
 ~~~sh
