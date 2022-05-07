@@ -80,6 +80,7 @@ echo "INSTALANDO O PLUGIN DO ZABBIX NO GRAFANA" ; sleep 2 ;\
 grafana-cli plugins install alexanderzobnin-zabbix-app
 ~~~
 
-
-
+# Instalação e configuração do BROKER MOSQUITTO
+~~~
+apt install mosquitto -y ; apt install mosquitto-clients -y
 ~~~
