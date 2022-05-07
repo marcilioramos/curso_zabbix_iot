@@ -10,7 +10,12 @@ dpkg -i zabbix-release_6.0-1+ubuntu20.04_all.deb ; \
 apt update -y
 ~~~
 ~~~sh
-apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent -y ; apt install mysql-server
+apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent -y ; \
+apt install mysql-server; \
+wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix/zabbix-sender_6.0.4-1%2Bubuntu20.04_amd64.deb; \
+dpkg -i zabbix-sender_6.0.4-1+ubuntu20.04_amd64.deb
+
+
 ~~~
 
 ### Configurando Mysql e banco de dados inicial
