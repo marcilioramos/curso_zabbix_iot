@@ -13,28 +13,32 @@ apt update -y
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent -y ; \
 apt install mysql-server; \
 wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix/zabbix-sender_6.0.4-1%2Bubuntu20.04_amd64.deb; \
-dpkg -i zabbix-sender_6.0.4-1+ubuntu20.04_amd64.deb
-
-
+dpkg -i zabbix-sender_6.0.4-1+ubuntu20.04_amd64.deb;\
+dpkg-reconfigure locales
 ~~~
 
 ### Configurando Mysql e banco de dados inicial
 
 ~~~
-# mysql -uroot -p
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'zabbix';
+mysql_secure_installation
+### 1BsIM2s5kDPst2GZe9vHA3TSIoCgCGNHVoaKw2w3jCE
+mysql -uroot -p
 password
 mysql> 
 ~~~
 ~~~
+mysql -uroot -p'1BsIM2s5kDPst2GZe9vHA3TSIoCgCGNHVoaKw2w3jCE'
 create database zabbix character set utf8mb4 collate utf8mb4_bin;
-create user zabbix@localhost identified by 'zabbix';
+create user zabbix@localhost identified by '1BsIM2s5kDPst2GZe9vHA3TSIoCgCGNHVoaKw2w3jCE';
 grant all privileges on zabbix.* to zabbix@localhost;
 quit;
 ~~~
 
 #### No servidor do Zabbix, importe o esquema inicial e os dados. Vocá será solicitado a inserir a senha que foi criada anteriormente.
 ~~~
-zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
+zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p'1BsIM2s5kDPst2GZe9vHA3TSIoCgCGNHVoaKw2w3jCE'
 ~~~
 
 #### Configure o banco de dados para o servidor Zabbix
