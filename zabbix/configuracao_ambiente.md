@@ -58,3 +58,27 @@ systemctl restart zabbix-server zabbix-agent apache2 ; systemctl enable zabbix-s
 ~~~
 http://server_ip_or_name/zabbix
 ~~~
+
+# Instalação e configuração do Grafana
+
+~~~
+clear ;\
+echo "BAIXANDO REPOSITORIOS E CHAVES PARA O GRAFANA NO GRAFANA" ; sleep 2 ;\
+apt-get install -y apt-transport-https ; \
+apt-get install -y software-properties-common wget ;\
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add - ;\
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list ;\
+clear ;\
+apt-get update ; clear ;\
+clear ;\
+echo "INSTALANDO O GRAFANA" ; sleep 2 ;\
+apt-get install grafana -y ;\
+systemctl daemon-reload ; sudo systemctl start grafana-server ; sudo systemctl enable grafana-server ;\ 
+clear ;\
+echo "INSTALANDO O PLUGIN DO ZABBIX NO GRAFANA" ; sleep 2 ;\
+grafana-cli plugins install alexanderzobnin-zabbix-app
+~~~
+
+
+
+~~~
