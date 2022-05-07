@@ -63,7 +63,7 @@ http://server_ip_or_name/zabbix
 
 ~~~
 clear ;\
-echo "BAIXANDO REPOSITORIOS E CHAVES PARA O GRAFANA NO GRAFANA" ; sleep 2 ;\
+echo "BAIXANDO REPOSITORIOS E CHAVES PARA O GRAFANA" ; sleep 2 ;\
 apt-get install -y apt-transport-https ; \
 apt-get install -y software-properties-common wget ;\
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add - ;\
