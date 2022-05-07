@@ -73,8 +73,10 @@ apt-get update ; clear ;\
 clear ;\
 echo "INSTALANDO O GRAFANA" ; sleep 2 ;\
 apt-get install grafana -y ;\
-systemctl daemon-reload ; sudo systemctl start grafana-server ; sudo systemctl enable grafana-server ;\ 
+systemctl daemon-reload ; sudo systemctl start grafana-server ; sudo systemctl status grafana-server ;\ 
+sleep 2 ; sudo systemctl enable grafana-server
 clear ;\
+
 echo "INSTALANDO O PLUGIN DO ZABBIX NO GRAFANA" ; sleep 2 ;\
 grafana-cli plugins install alexanderzobnin-zabbix-app
 ~~~
