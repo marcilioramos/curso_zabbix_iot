@@ -38,7 +38,7 @@ quit;
 
 #### No servidor do Zabbix, importe o esquema inicial e os dados. Vocá será solicitado a inserir a senha que foi criada anteriormente.
 ~~~
-zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p'1BsIM2s5kDPst2GZe9vHA3TSIoCgCGNHVoaKw2w3jCE'
+zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
 ~~~
 
 #### Configure o banco de dados para o servidor Zabbix
